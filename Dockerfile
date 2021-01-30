@@ -9,7 +9,10 @@ LABEL "com.github.actions.description"="Builds & deploys Jekyll to gh-pages bran
 LABEL "com.github.actions.icon"="globe"	
 LABEL "com.github.actions.color"="green"	
 
-LABEL "repository"="http://github.com/BryanSchuetz/jekyll-deploy-gh-pages"	
+LABEL "repository"="http://github.com/Li357/jekyll-deploy-gh-pages"	
+
+RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
+RUN apt-get install nodejs
 
 ADD entrypoint.sh /entrypoint.sh
 
