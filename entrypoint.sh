@@ -16,6 +16,9 @@ cd build
 echo "pwd"
 pwd
 
+echo "ls -lha"
+ls -lha
+
 remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" &&
 	remote_branch="gh-pages" &&
 	git config --global init.defaultBranch main &&
@@ -29,6 +32,6 @@ remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITO
 	rm -fr .git &&
 	cd ../
 
-echo "	git push --force $remote_repo main:$remote_branch >/dev/null 2>&1 &&"
+echo "	git push --force $remote_repo $remote_branch >/dev/null 2>&1 &&"
 
 echo '👍 GREAT SUCCESS!'
