@@ -21,7 +21,7 @@ RUN echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesourc
 RUN apt-get update && apt-get install nodejs -y && apt-get clean
 
 # Install image compressor/manager
-RUN apt-get install -y libvips imagemagick vips-tools && apt-get clean
+RUN apt-get install -y libvips imagemagick vips && apt-get clean
 
 # Install OpenJDK-11
 RUN apt-get install -y default-jre && \
