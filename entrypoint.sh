@@ -28,8 +28,9 @@ remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITO
 	git add . &&
 	echo -n 'Files to Commit:' && ls -l | wc -l &&
 	git commit -m 'action build' >/dev/null 2>&1 &&
-	git push --force $remote_repo main:$remote_branch >/dev/null 2>&1 &&
-	rm -fr .git &&
+	# git push --force $remote_repo main:$remote_branch >/dev/null 2>&1 &&
+	git push --force $remote_repo main:$remote_branch >/dev/null
+rm -fr .git &&
 	cd ../
 
 echo "	git push --force $remote_repo $remote_branch >/dev/null 2>&1 &&"
