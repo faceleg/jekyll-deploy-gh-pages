@@ -18,7 +18,8 @@ remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITO
 	git add . &&
 	echo -n 'Files to Commit:' && ls -l | wc -l &&
 	git commit -m 'action build' >/dev/null 2>&1 &&
-	git push --force $remote_repo master:$remote_branch >/dev/null 2>&1 &&
+	git push --force $remote_repo main:$remote_branch >/dev/null 2>&1 &&
 	rm -fr .git &&
 	cd ../
+echo $remote_repo
 echo '👍 GREAT SUCCESS!'
