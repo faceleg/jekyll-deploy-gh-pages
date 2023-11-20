@@ -26,5 +26,3 @@ RUN apt-get install -y libvips && apt-get clean
 # Install OpenJDK-11
 RUN apt-get install -y default-jre && \
     apt-get clean;
-
-RUN mkdir build
