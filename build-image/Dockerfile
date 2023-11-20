@@ -27,3 +27,4 @@ RUN apt-get install -y libvips && apt-get clean
 RUN apt-get install -y default-jre && \
     apt-get clean;
 
+RUN mkdir build
