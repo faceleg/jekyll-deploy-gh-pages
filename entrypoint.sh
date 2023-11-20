@@ -11,8 +11,8 @@ echo '👍 THE SITE IS BUILT—PUSHING IT BACK TO GITHUB-PAGES'
 cd build
 remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" &&
 	remote_branch="gh-pages" &&
-	git init &&
 	git config --global init.defaultBranch main &&
+	git init &&
 	git config user.name "${GITHUB_ACTOR}" &&
 	git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" &&
 	git add . &&
@@ -21,5 +21,4 @@ remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITO
 	git push --force $remote_repo main:$remote_branch >/dev/null 2>&1 &&
 	rm -fr .git &&
 	cd ../
-echo $remote_repo
 echo '👍 GREAT SUCCESS!'
