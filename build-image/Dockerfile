@@ -26,3 +26,6 @@ RUN apt-get install -y libvips imagemagick libvips-tools && apt-get clean
 # Install OpenJDK-11
 RUN apt-get install -y default-jre && \
     apt-get clean;
+
+gem install bundler
+
