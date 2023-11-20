@@ -1,4 +1,6 @@
-FROM ruby:3
+# Built from ./build-image/Dockerfile
+FROM ghcr.io/faceleg/jekyll-deploy-gh-pages
+
 # Set default locale for the environment	
 ENV LC_ALL C.UTF-8	
 ENV LANG en_US.UTF-8	
