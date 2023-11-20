@@ -12,6 +12,7 @@ cd build
 remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" &&
 	remote_branch="gh-pages" &&
 	git init &&
+	git config --global init.defaultBranch main &&
 	git config user.name "${GITHUB_ACTOR}" &&
 	git config user.email "${GITHUB_ACTOR}@users.noreply.github.com" &&
 	git add . &&
