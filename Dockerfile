@@ -11,8 +11,12 @@ LABEL "com.github.actions.color"="green"
 
 LABEL "repository"="http://github.com/Li357/jekyll-deploy-gh-pages"	
 
-RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
-RUN apt-get install nodejs
+RUN sudo apt-get update && sudo apt-get install -y ca-certificates curl gnupg
+RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+RUN NODE_MAJOR=20
+RUN echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+RUN sudo apt-get update && sudo apt-get install nodejs -y
+RUN apt-get install libvips libpng libjpeg
 
 ADD entrypoint.sh /entrypoint.sh
 
